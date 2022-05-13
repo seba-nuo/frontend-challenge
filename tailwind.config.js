@@ -7,7 +7,19 @@ module.exports = {
       sans: ['Nunito', 'sans-serif'],
       subscribe: ['Lato', 'Nunito', 'sans-serif']
     },
-    extend: {},
+    colors: {
+      orange: "#F8475F",
+      white: "#FFFFFF",
+      black: "#000000",
+      ligthGray: "#C0C0C0",
+      black: "#000000",
+      darkGray: "#7A7A7A"
+    },
+    extend: {
+      backgroundImage: {
+        'hero': "url('../../Assets/img/hero.webp')"
+      }
+    },
   },
   plugins: [],
 }
