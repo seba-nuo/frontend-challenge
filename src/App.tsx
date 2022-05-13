@@ -1,9 +1,9 @@
-import logo from './Assets/img/logo.svg'
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <div className="App">
-      <img src={logo} alt="logo" />
+      <Nav />
     </div>
   );
 }
