@@ -3,6 +3,7 @@ import Search from "./Layouts/Search";
 import Hero from "./Layouts/Hero";
 import BestSeller from "./Layouts/BestSeller";
 
+
 function App() {
   return (
     <div className="App">
