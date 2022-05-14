@@ -5,10 +5,15 @@ Made with:
 
 ## Installation
 You must have [Node.js](https://nodejs.org/en/download/) installed. 
-On the proyect directory run:
+1. On the proyect directory run:
 - `npm i`
-  
-Install all dependencies.
+
+  To install all dependencies.
+
+2. create a .env on the proyect and add a variable with the products url like this:
+
+   `REACT_APP_URL="replace this with your products url"`
+
 
 ## Available Scripts
 In the project directory, you can run:
