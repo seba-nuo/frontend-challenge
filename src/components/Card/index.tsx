@@ -7,7 +7,7 @@ function Card(product: productsProps) {
   const isOff = product.installments[0]?.quantity > 0
 
   return (
-    <li className="flex justify-center container mx-10 mt-6">
+    <li className="flex justify-center container mx-6 mt-6">
       <div className="relative flex flex-col items-center">
         <img className="h-40" src={product.imageUrl} alt={product.productName} />
         {
