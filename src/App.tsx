@@ -3,6 +3,7 @@ import Search from "./Layouts/Search";
 import Hero from "./Layouts/Hero";
 import BestSeller from "./Layouts/BestSeller";
 import Newsletter from "./Layouts/Newsletter";
+import Footer from "./Layouts/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Hero />
       <BestSeller />
       <Newsletter />
+      <Footer />
     </div>
   );
 }

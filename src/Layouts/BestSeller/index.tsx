@@ -74,13 +74,13 @@ function BestSeller() {
 
   return (
     <main>
-      <div className="my-6 mx-6">
+      <div className="my-6 mx-10">
         <h1 className="text-2xl font-black">Más Vendidos</h1>
         <div className="bg-ligthGray w-16 h-1"></div>
       </div>
       <div className="overflow-scroll whitespace-nowrap">
         {
-          <ul className="flex">
+          <ul className="flex ml-2">
             {products && products.map(product => <Card key={product.productId} {...product} />)}
           </ul>
         }

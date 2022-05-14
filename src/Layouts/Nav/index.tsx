@@ -1,4 +1,4 @@
-import logo from '../../Assets/img/logo.svg'
+import corebiz from '../../Assets/img/corebiz.svg'
 import menu from '../../Assets/img/menu.svg'
 import cart from '../../Assets/img/cart.svg'
 
@@ -6,7 +6,7 @@ function Nav() {
   return (
     <nav className='flex justify-between my-4 mx-6'>
       <img src={menu} alt="menu" />
-      <img src={logo} alt="logo" />
+      <img src={corebiz} alt="corebiz" />
       <div className='flex'>
         <img src={cart} alt="cart" />
         <p className='text-white bg-orange rounded-full text-center h-4 w-4 text-xs'>
