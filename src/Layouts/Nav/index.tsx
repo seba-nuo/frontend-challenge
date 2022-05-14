@@ -4,7 +4,7 @@ import cart from '../../Assets/img/cart.svg'
 
 function Nav() {
   return (
-    <nav className='flex justify-between m-4'>
+    <nav className='flex justify-between my-4 mx-6'>
       <img src={menu} alt="menu" />
       <img src={logo} alt="logo" />
       <div className='flex'>

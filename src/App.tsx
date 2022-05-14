@@ -1,6 +1,7 @@
-import Nav from "./components/Nav";
-import Search from "./components/Search";
-import Hero from "./components/Hero";
+import Nav from "./Layouts/Nav";
+import Search from "./Layouts/Search";
+import Hero from "./Layouts/Hero";
+import BestSeller from "./Layouts/BestSeller";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Nav />
       <Search />
       <Hero />
+      <BestSeller />
     </div>
   );
 }
