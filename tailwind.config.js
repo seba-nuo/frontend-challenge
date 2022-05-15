@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Nunito', 'sans-serif'],
-      subscribe: ['Lato', 'Nunito', 'sans-serif']
+      subscribe: ['Lato', 'Nunito', 'sans-serif'],
+      buyBtn: ['Ubuntu', 'Nunito', 'sans-serif']
     },
     colors: {
       orange: "#F8475F",

@@ -4,14 +4,14 @@ import starBorder from '../../Assets/img/star-border.svg'
 
 function Card(product: productsProps) {
 
-  const isOff = product.installments[0]?.quantity > 0
+  const hasInstallments = product.installments.length > 0
 
   return (
     <li className="flex justify-center container mx-6 mt-6">
-      <div className="relative flex flex-col items-center">
+      <div className="relative flex flex-col items-center w-44">
         <img className="h-40" src={product.imageUrl} alt={product.productName} />
         {
-          !isOff &&
+          product.listPrice &&
           <div className="absolute top-0 right-0 bg-orange">
             <h1 className="absolute text-white p-2 z-10 top-0 right-0">OFF</h1>
             <div className=" absolute w-24 overflow-hidden inline-block top-0 right-0">
@@ -19,15 +19,45 @@ function Card(product: productsProps) {
             </div>
           </div>
         }
-        <p>{product.productName}</p>
+        <p className="text-sm text-darkGray font-semibold">{product.productName}</p>
         <Stars stars={product.stars} />
-        <p className="font-bold">por ${product.price}</p>
-        <button type="button" className="bg-black text-white rounded-md h-10 w-full mt-2">COMPRAR</button>
+        {product.listPrice && <p className="line-through text-ligthGray">de {valueToPrice(product.listPrice)}</p>}
+        <p className="font-bold text-xl mb-1">por {valueToPrice(product.price)}</p>
+        {
+          hasInstallments &&
+          <p className="text-xs text-darkGray">
+            o por {product.installments[0].quantity} cuotas de {valueToPrice(product.installments[0].value)}
+          </p>
+        }
+        <button type="button" className="bg-black text-white rounded-md h-10 w-full mt-4">COMPRAR</button>
       </div>
 
     </li>
   )
 }
+
+//TODO refactor functions to a separate file
+
+/**
+ * transform a integer value to a string representing the price with two decimals
+ * @param value {Number} 
+ * @example 
+ * returns $125.00
+ * valueToPrice(12500)
+ */
+const valueToPrice = (value: number) => {
+  const stringOfNum = String(value)
+  const numLength = stringOfNum.length
+  if (numLength < 3) return `$0.${stringOfNum}`
+
+  return `$${stringOfNum.substring(0, numLength - 2)}.${stringOfNum.substring(numLength - 2)}`
+}
+
+/**
+ * function that take a number of stars of a product and return jsx representing the quantity of stars
+ * @param stars {Number} 
+ * @returns {JSX.Element} 
+ */
 
 const Stars = ({ stars }: { stars: number }) => {
   const isOutOfRange = stars < 0 || stars > 5

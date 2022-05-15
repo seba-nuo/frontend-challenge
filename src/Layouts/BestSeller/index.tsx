@@ -70,7 +70,7 @@ function BestSeller() {
   // useEffect(() => {
   //   // URL && fetch(URL).then(data => data.json()).then(setProducts)    
   // }, [])
-  console.log(products);
+  // console.log(products);
 
   return (
     <main>
@@ -80,7 +80,7 @@ function BestSeller() {
       </div>
       <div className="overflow-scroll whitespace-nowrap">
         {
-          <ul className="flex ml-2">
+          <ul className="flex ml-">
             {products && products.map(product => <Card key={product.productId} {...product} />)}
           </ul>
         }
