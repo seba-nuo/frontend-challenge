@@ -22,14 +22,14 @@ function Card(product: productsProps) {
         <p className="text-sm text-darkGray font-semibold">{product.productName}</p>
         <Stars stars={product.stars} />
         {product.listPrice && <p className="line-through text-ligthGray">de {valueToPrice(product.listPrice)}</p>}
-        <p className="font-bold text-xl mb-1">por {valueToPrice(product.price)}</p>
+        <p className="font-bold text-xl">por {valueToPrice(product.price)}</p>
         {
           hasInstallments &&
           <p className="text-xs text-darkGray">
             o por {product.installments[0].quantity} cuotas de {valueToPrice(product.installments[0].value)}
           </p>
         }
-        <button type="button" className="bg-black text-white rounded-md h-10 w-full mt-4">COMPRAR</button>
+        <button type="button" className="bg-black text-white rounded-md h-10 w-full mt-3">COMPRAR</button>
       </div>
 
     </li>
