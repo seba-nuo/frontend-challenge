@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { productsProps } from '../../../types'
 import Card from "../../components/Card";
 
 function BestSeller() {
-  const URL = process.env.REACT_APP_URL
+  // const PRODUCTS_URL = process.env.REACT_APP_PRODUCTS_URL
 
-  const [products, setProducts] = useState<productsProps[]>([
+  // TODO: now using template object of products, update to use products url
+
+  const [products] = useState<productsProps[]>([
     {
       "productId": 1,
       "productName": "SAPATO FLOATER PRETO",
@@ -78,9 +80,9 @@ function BestSeller() {
         <h1 className="text-2xl font-black">Más Vendidos</h1>
         <div className="bg-ligthGray w-16 h-1"></div>
       </div>
-      <div className="overflow-scroll whitespace-nowrap">
+      <div className="overflow-x-scroll whitespace-nowrap md:overflow-auto">
         {
-          <ul className="flex ml-">
+          <ul className="flex items-end">
             {products && products.map(product => <Card key={product.productId} {...product} />)}
           </ul>
         }

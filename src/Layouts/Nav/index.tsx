@@ -1,14 +1,14 @@
-import corebiz from '../../Assets/img/corebiz.svg'
-import menu from '../../Assets/img/menu.svg'
-import cart from '../../Assets/img/cart.svg'
+import { ReactComponent as Corebiz } from '../../Assets/img/corebiz.svg'
+import { ReactComponent as Menu } from '../../Assets/img/menu.svg'
+import { ReactComponent as Cart } from '../../Assets/img/cart.svg'
 
 function Nav() {
   return (
     <nav className='flex justify-between my-4 mx-6'>
-      <img src={menu} alt="menu" />
-      <img src={corebiz} alt="corebiz" />
+      <Menu />
+      <Corebiz />
       <div className='flex'>
-        <img src={cart} alt="cart" />
+        <Cart />
         <p className='text-white bg-orange rounded-full text-center h-4 w-4 text-xs'>
           1
         </p>
