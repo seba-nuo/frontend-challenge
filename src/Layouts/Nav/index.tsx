@@ -14,7 +14,7 @@ function Nav() {
         <a href="/" title='corebiz'><Corebiz /></a>
         <form className='hidden justify-center w-3/5 md:flex'>
           <div className='flex border-b-2 border-ligthGray w-full mx-6 justify-between'>
-            <input type="text" className='text-sm px-1 focus-visible:outline-none' name="search" id="search" placeholder="¿Qué estás buscando?" />
+            <input type="text" className='text-sm px-1 w-full focus-visible:outline-none' name="search" id="search" placeholder="¿Qué estás buscando?" />
             <button type="submit" title='Search'><SVGSearch /></button>
           </div>
         </form>
@@ -31,7 +31,7 @@ function Nav() {
       </div>
       <form className='flex justify-center w-full m-auto md:hidden'>
         <div className='flex border-b-2 border-ligthGray w-full mt-3 justify-between'>
-          <input type="text" className='text-sm px-1 focus-visible:outline-none' name="search1" id="search1" placeholder="¿Qué estás buscando?" />
+          <input type="text" className='text-sm px-1 w-full focus-visible:outline-none' name="search1" id="search1" placeholder="¿Qué estás buscando?" />
           <button type="submit" title='Search'><SVGSearch /></button>
         </div>
       </form>
