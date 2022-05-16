@@ -3,10 +3,12 @@ import { ReactComponent as Menu } from '../../Assets/img/menu.svg'
 import { ReactComponent as Cart } from '../../Assets/img/cart.svg'
 import { ReactComponent as Person } from '../../Assets/img/person.svg'
 import { ReactComponent as SVGSearch } from '../../Assets/img/search.svg'
-
-// import Search from '../Search'
+import { CartContext } from '../../Services/CartContext'
+import { useContext } from 'react'
 
 function Nav() {
+  const cartProducts = useContext(CartContext)
+
   return (
     <nav className='flex flex-col my-4 mx-6 lg:mx-32'>
       <div className='flex justify-between'>
@@ -24,9 +26,11 @@ function Nav() {
             <h1 className='text-sm'>Mi Cuenta</h1>
           </div>
           <Cart className='cursor-pointer' />
-          <p className='text-white bg-orange rounded-full text-center h-4 w-4 text-xs'>
-            1
-          </p>
+          {cartProducts !== 0 &&
+            <p className='text-white bg-orange rounded-full text-center h-4 w-4 text-xs'>
+              {cartProducts}
+            </p>
+          }
         </div>
       </div>
       <form className='flex justify-center w-full m-auto md:hidden'>

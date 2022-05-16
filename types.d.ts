@@ -14,3 +14,7 @@ export interface installementsProps {
   value: number;
   quantity: number;
 }
+
+export interface ChildrenProps {
+  children: JSX.Element[] | JSX.Element
+}

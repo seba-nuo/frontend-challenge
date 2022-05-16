@@ -3,16 +3,18 @@ import Hero from "./Layouts/Hero";
 import BestSeller from "./Layouts/BestSeller";
 import Newsletter from "./Layouts/Newsletter";
 import Footer from "./Layouts/Footer";
+import { CartQuantityProvider } from './Services/CartContext'
 
 function App() {
+
   return (
-    <div className="App">
+    <CartQuantityProvider>
       <Nav />
       <Hero />
       <BestSeller />
       <Newsletter />
       <Footer />
-    </div>
+    </CartQuantityProvider>
   );
 }
 
