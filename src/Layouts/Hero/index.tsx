@@ -3,10 +3,10 @@ import { ReactComponent as Wave } from '../../Assets/img/wave.svg'
 
 function Hero() {
   return (
-    <header className="relative mt-6 h-[600px]">
+    <header className="relative mt-6 h-[300px]">
       <div className='relative'>
-        <Wave className='hidden absolute left-1/2 z-10 lg:block' />
-        <img className="absolute right-0 w-full h-[600px] lg:w-1/2" src={hero} alt="hero" />
+        <Wave className='hidden absolute w-full z-10 lg:block' />
+        <img className="absolute right-0 w-full h-[300px] lg:w-1/2" src={hero} alt="hero" />
       </div>
       <div className='hidden absolute bg-black w-1/2 h-full lg:block' >
       </div>
