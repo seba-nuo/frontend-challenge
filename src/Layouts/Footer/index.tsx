@@ -20,11 +20,11 @@ function Footer() {
           <a href='tel:+55 11 3090 1039' className='text-white text-sm w-fit'>+55 11 3090 1039</a>
         </div>
         <div className='flex flex-col my-10 items-center lg:my-auto'>
-          <button type="button" className="bg-white text-black rounded-md flex p-2 mb-4 items-center h-14 w-5/6 lg:w-64 lg:h-8">
+          <button type="button" className="bg-white text-black rounded-md flex p-2 mb-4 items-center h-12 w-64 lg:w-64 lg:h-8">
             <Mail className='ml-2' />
             <h1 className='text-center w-full text-xs font-semibold'>CONTÁCTANOS</h1>
           </button>
-          <button type="button" className="bg-white text-black rounded-md flex p-2 mb-4 items-center h-14 w-5/6 lg:w-64 lg:h-8">
+          <button type="button" className="bg-white text-black rounded-md flex p-2 mb-4 items-center h-12 w-64 lg:w-64 lg:h-8">
             <Headset className='ml-2' />
             <h1 className='text-center w-full text-xs font-semibold'>HABLA CON UN CONSULTOR</h1>
           </button>
