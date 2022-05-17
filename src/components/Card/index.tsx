@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { productsProps } from "../../../types"
 import { Stars, valueToPrice } from "../../Services/utils"
-import { UpdateCartContext } from './../../Services/CartContext'
+import { UpdateCartContext } from '../../Services/Context/ProductsContext'
 import { toast } from 'react-hot-toast'
 
 function Card(product: productsProps) {
