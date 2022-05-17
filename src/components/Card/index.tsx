@@ -10,7 +10,7 @@ function Card(product: productsProps) {
 
   const addToCart = () => {
     updateCart(product.productId)
-    toast.success(`El producto ${product.productName} ha sido agregado a su carrito`, { position: "bottom-right" })
+    toast.success(`El producto ${product.productName} ha sido agregado a su carrito`, { position: "bottom-right", duration: 1300 })
   }
 
   return (
