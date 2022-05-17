@@ -3,7 +3,7 @@ import { ReactComponent as Menu } from '../../Assets/img/menu.svg'
 import { ReactComponent as Cart } from '../../Assets/img/cart.svg'
 import { ReactComponent as Person } from '../../Assets/img/person.svg'
 import { ReactComponent as SVGSearch } from '../../Assets/img/search.svg'
-import { CartContext, ProductsContext, SearchContext, UpdateSearchContext } from '../../Services/Context/'
+import { CartContext, ProductsContext, UpdateSearchContext } from '../../Services/Context/'
 import { ChangeEvent, useContext, useState } from 'react'
 
 function Nav() {
