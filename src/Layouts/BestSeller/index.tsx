@@ -70,7 +70,7 @@ function BestSeller() {
         <h1 className="text-2xl font-black">Más Vendidos</h1>
         <div className="bg-ligthGray w-16 h-1"></div>
       </div>
-      <div className="whitespace-nowrap md:overflow-auto lg:mx-32">
+      <div className="whitespace-nowrap lg:mx-28">
         {
           <ul className="flex items-end justify-center">
             {
