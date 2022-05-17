@@ -21,7 +21,6 @@ function Nav() {
     const search = products.filter(product => {
       return product.productName.toLowerCase().includes(value.toLowerCase())
     })
-    console.log(search);
     
     updateSearch(search)
     setOnSearch(true)
