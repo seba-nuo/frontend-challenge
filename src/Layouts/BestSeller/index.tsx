@@ -27,6 +27,7 @@ function BestSeller() {
     }
   }
 
+  // could be refactored to separate files in services folder
   useEffect(() => {
     PRODUCTS_URL && fetch(PRODUCTS_URL)
       .then(data => data.json())

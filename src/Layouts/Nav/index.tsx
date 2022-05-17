@@ -21,7 +21,7 @@ function Nav() {
     const search = products.filter(product => {
       return product.productName.toLowerCase().includes(value.toLowerCase())
     })
-    
+
     updateSearch(search)
     setOnSearch(true)
     if (value === '') {
@@ -59,10 +59,10 @@ function Nav() {
           }
         </div>
       </div>
-      <form className='flex justify-center w-full m-auto md:hidden'>
+      <form className='flex justify-center w-full m-auto md:hidden' onSubmit={(e) => { e.preventDefault() }}>
         <div className='flex border-b-2 border-ligthGray w-full mt-3 justify-between'>
-          <input type="text" className='text-sm px-1 w-full focus-visible:outline-none' name="search1" id="search1" placeholder="¿Qué estás buscando?" />
-          <button type="submit" title='Search'><SVGSearch /></button>
+          <input type="text" className='text-sm px-1 w-full focus-visible:outline-none' name="search1" id="search1" placeholder="¿Qué estás buscando?" onChange={handleSearch} value={searchTerm} />
+          <button type="submit" title='Search' onClick={() => { onSearch && clearSearch() }}>{onSearch ? "X" : <SVGSearch />}</button>
         </div>
       </form>
     </nav>
