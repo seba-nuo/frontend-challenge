@@ -4,6 +4,8 @@ Made with:
 - Typescript ✍️
 - Tailwindcss ⛵💨 
 
+> You can access to the live demo [here](https://frontend-challenge-inky.vercel.app/).
+
 ## Installation
 You must have [Node.js](https://nodejs.org/en/download/) installed. 
 1. On the proyect directory run:
@@ -24,4 +26,11 @@ In the project directory, you can run:
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Things to improve
+- Add modal/page when cart is pressed with the cart products
+- Refactor some components that has more than 80 lines
+- Refactor some long tailwind classnames using @apply
+- Make toast styled based on the design system
+
 
