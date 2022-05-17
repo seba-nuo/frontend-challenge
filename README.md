@@ -2,6 +2,7 @@
 Made with:
 - React
 - Typescript
+- Tailwindcss
 
 ## Installation
 You must have [Node.js](https://nodejs.org/en/download/) installed. 
@@ -10,9 +11,10 @@ You must have [Node.js](https://nodejs.org/en/download/) installed.
 
   To install all dependencies.
 
-2. create a .env on the proyect and add a variable with the products and newsletter url like this:
+2. create a .env on the proyect directory and add two variables, products and newsletter url like so:
 
    `REACT_APP_PRODUCTS_URL="replace this with your products url"`
+   
    `REACT_APP_NEWSLETTER_URL="replace this with your newsletter url"`
 
 
