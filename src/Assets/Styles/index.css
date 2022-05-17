@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Nunito:wght@400;600;700;900&family=Ubuntu:wght@500&display=swap');
+
+@layer components {
+  .newsletter-input {
+    @apply p-4 mb-4 w-full rounded-lg h-14 focus-visible:outline-none border-2 border-white lg:mb-0 lg:mr-3 lg:w-64 lg:rounded-none;
+  }
+  .subcribirme-btn {
+    @apply text-white bg-black p-4 w-full rounded-lg font-subscribe font-bold mb-8 h-14 lg:mb-0 lg:w-36 lg:rounded-none;
+  }
+}
