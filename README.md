@@ -30,7 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## Things to improve
 - Add modal/page when cart is pressed with the cart products
 - Refactor some components that has more than 80 lines
-- Refactor some long tailwind classnames using `@apply`
+- Refactor some long tailwind classnames using `@apply` in Assets/styles/index.css
 - Make toast styled based on the design system
 
 
