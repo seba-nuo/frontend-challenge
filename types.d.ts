@@ -5,10 +5,9 @@ export interface productsProps {
   imageUrl: string;
   listPrice: number | null;
   price: number;
-  installments: [
-    installementsProps
-  ] | never[];
-}[] | null;
+  installments: [installementsProps] | never[];
+}
+[] | null;
 
 export interface installementsProps {
   value: number;
@@ -16,5 +15,5 @@ export interface installementsProps {
 }
 
 export interface ChildrenProps {
-  children: JSX.Element[] | JSX.Element
+  children: JSX.Element[] | JSX.Element;
 }

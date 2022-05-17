@@ -1,12 +1,15 @@
-import { useEffect, useRef, useState } from "react"
-import { productsProps } from '../../../types'
+import { useContext, useEffect, useRef, useState } from "react"
 import Card from "../../components/Card";
 import { Dots, showProducts } from "../../Services/utils";
+import { ProductsContext, UpdateProductsContext, SearchContext } from '../../Services/Context'
 
 function BestSeller() {
   const PRODUCTS_URL = process.env.REACT_APP_PRODUCTS_URL
 
-  const [products, setProducts] = useState<productsProps[]>([])
+  const updateProducts = useContext(UpdateProductsContext)
+  const products = useContext(ProductsContext)
+  const search = useContext(SearchContext)
+
   const [error, setErrors] = useState(false)
   const [dotPosition, setDotPosition] = useState<number>(0)
   const [numberOfDots, setNumberOfDots] = useState(0)
@@ -14,7 +17,8 @@ function BestSeller() {
 
   const mainRef = useRef<HTMLElement>(null);
 
-  const productsShown = showProducts(dotPosition, products, numberOfDots)
+  const productsToShow = search.length > 0 ? search : products
+  const productsShown = showProducts(dotPosition, productsToShow, numberOfDots)
 
   const handleResize = () => {
     if (mainRef.current) {
@@ -26,9 +30,9 @@ function BestSeller() {
   useEffect(() => {
     PRODUCTS_URL && fetch(PRODUCTS_URL)
       .then(data => data.json())
-      .then(setProducts)
+      .then(updateProducts)
       .catch(() => setErrors(true))
-  }, [PRODUCTS_URL])
+  }, [PRODUCTS_URL, updateProducts])
 
   // to update items displayed in the slider based on the screen size
   useEffect(() => {
@@ -37,9 +41,9 @@ function BestSeller() {
       const width = mainRef.current ? mainRef.current.offsetWidth : 0
       setComponentWidth(width)
 
-      const twoProductPage = products.length / 2
-      const threeProductPage = products.length / 3
-      const fourProductPage = products.length / 4
+      const twoProductPage = productsToShow.length / 2
+      const threeProductPage = productsToShow.length / 3
+      const fourProductPage = productsToShow.length / 4
 
       if (componentWidth < 640) {
         setNumberOfDots(twoProductPage)
@@ -57,7 +61,7 @@ function BestSeller() {
       window.removeEventListener("resize", handleResize)
     }
 
-  }, [componentWidth, products.length])
+  }, [componentWidth, productsToShow.length])
 
 
   return (
@@ -68,7 +72,7 @@ function BestSeller() {
       </div>
       <div className="whitespace-nowrap md:overflow-auto lg:mx-32">
         {
-          <ul className="flex items-end transition-all">
+          <ul className="flex items-end justify-center">
             {
               error && (
                 <li className="m-auto p-10">
@@ -77,8 +81,7 @@ function BestSeller() {
               )
             }
             {
-              products &&
-              productsShown.map(product => <Card key={product.productId} {...product} />)
+              productsShown && productsShown.map(product => <Card key={product.productId} {...product} />)
             }
           </ul>
         }
