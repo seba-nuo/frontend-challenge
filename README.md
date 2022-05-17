@@ -1,8 +1,8 @@
 ## Frontend Challenge
 Made with:
-- React
-- Typescript
-- Tailwindcss
+- React ⚛️
+- Typescript ✍️
+- Tailwindcss ⛵💨 
 
 ## Installation
 You must have [Node.js](https://nodejs.org/en/download/) installed. 
