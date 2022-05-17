@@ -14,6 +14,7 @@ export function ProductsProvider({ children }: ChildrenProps) {
   const [cartProducts, setCartProducts] = useState<number[]>(cookie.cartProducts || [])
 
   function addCartProducts(id: number) {
+    if (cartProducts.includes(id)) return
     setCartProducts([...cartProducts, id])
     setCookie('cartProducts', [...cartProducts, id])
   }

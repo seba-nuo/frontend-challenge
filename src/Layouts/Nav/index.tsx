@@ -35,6 +35,24 @@ function Nav() {
     setOnSearch(false)
   }
 
+  const displayCartModal = () => {
+    if (cartProducts.length > 0) {
+      const productsInCart = products.filter(product => {
+        return cartProducts.includes(product.productId)
+      })
+      console.log(productsInCart);
+
+      //TODO: Display cart modal
+      
+      // return (
+      //   <div className="">
+      //   </div>
+      // )
+    }
+  }
+
+
+
   return (
     <nav className='flex flex-col my-4 mx-6 lg:mx-32'>
       <div className='flex justify-between'>
@@ -51,7 +69,7 @@ function Nav() {
             <Person />
             <h1 className='text-sm'>Mi Cuenta</h1>
           </div>
-          <Cart className='cursor-pointer' />
+          <Cart className='cursor-pointer' onClick={() => displayCartModal()} />
           {cartProducts.length > 0 &&
             <p className='text-white bg-orange rounded-full text-center h-4 w-4 text-xs'>
               {cartProducts.length}
