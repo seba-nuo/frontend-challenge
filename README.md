@@ -32,5 +32,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - Refactor some components that has more than 80 lines
 - Refactor some long tailwind classnames using `@apply` in Assets/styles/index.css
 - Make toast styled based on the design system
-
+- Add tests and CI
 
