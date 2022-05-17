@@ -26,9 +26,9 @@ function Nav() {
             <h1 className='text-sm'>Mi Cuenta</h1>
           </div>
           <Cart className='cursor-pointer' />
-          {cartProducts !== 0 &&
+          {cartProducts.length > 0 &&
             <p className='text-white bg-orange rounded-full text-center h-4 w-4 text-xs'>
-              {cartProducts}
+              {cartProducts.length}
             </p>
           }
         </div>

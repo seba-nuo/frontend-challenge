@@ -1,11 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { productsProps } from '../../../types'
 import Card from "../../components/Card";
 
 function BestSeller() {
-  // const PRODUCTS_URL = process.env.REACT_APP_PRODUCTS_URL
-
-  // TODO: now using template object of products, update to use products url
+  const PRODUCTS_URL = process.env.REACT_APP_PRODUCTS_URL
 
   const [products] = useState<productsProps[]>([
     {
@@ -69,26 +67,65 @@ function BestSeller() {
       "installments": []
     }
   ])
+  // const [products, setProducts] = useState<productsProps[]>()
+  const [error, setErrors] = useState(false)
+  const [productsShown, setProductShown] = useState<number[]>([])
+  const numberOfDots = Math.ceil(products.length / 2)
+
   // useEffect(() => {
-  //   // URL && fetch(URL).then(data => data.json()).then(setProducts)    
-  // }, [])
-  // console.log(products);
+  //   PRODUCTS_URL && fetch(PRODUCTS_URL)
+  //     .then(data => data.json())
+  //     .then(setProducts)
+  //     .catch(() => setErrors(true))
+  // }, [PRODUCTS_URL])
 
   return (
-    <main>
-      <div className="my-6 mx-10">
+    <main className="flex flex-col">
+      <div className="my-6 mx-10 lg:mx-32">
         <h1 className="text-2xl font-black">Más Vendidos</h1>
         <div className="bg-ligthGray w-16 h-1"></div>
       </div>
-      <div className="overflow-x-scroll whitespace-nowrap md:overflow-auto">
+      <div className="overflow-x-scroll whitespace-nowrap md:overflow-auto lg:mx-32">
         {
           <ul className="flex items-end">
-            {products && products.map(product => <Card key={product.productId} {...product} />)}
+            {
+              error && (
+                <li className="m-auto p-10">
+                  <p className="text-orange text-lg">Error al consultar productos</p>
+                </li>
+              )
+            }
+            {
+              products &&
+              products.map(product => <Card key={product.productId} {...product} />)
+            }
           </ul>
         }
       </div>
+      <div className='flex w-full justify-center'>
+        { Dots(numberOfDots) }
+      </div>
     </main>
   )
+}
+
+const Dots = (numberOfDots: number) => {
+
+  const [dotPosition, setDotPosition] = useState<number>(0)
+
+  let dots = []
+  for (let index = 0; index < numberOfDots; index++) {
+    dots.push(
+      <div
+        className={`${dotPosition === index ? "bg-orange" : "bg-ligthGray"} w-4 h-4 m-2 rounded-full cursor-pointer`}
+        id={`${index}`}
+        key={index}
+        onClick={() => setDotPosition(index)}>
+      </div>
+    )
+  }
+
+  return dots
 }
 
 export default BestSeller

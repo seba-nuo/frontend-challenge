@@ -2,22 +2,22 @@ import { createContext, useState } from 'react'
 import { ChildrenProps } from '../../types'
 import { useCookies } from 'react-cookie'
 
-export const CartContext = createContext<number>(0)
-export const UpdateCartContext = createContext<() => void>(() => { })
+export const CartContext = createContext<number[]>([])
+export const UpdateCartContext = createContext<(id: number) => void>(() => { })
 
 export function CartQuantityProvider({ children }: ChildrenProps) {
   const [cookie, setCookie] = useCookies(['cartProducts']);
-  
-  const [productQuantity, setProductQuantity] = useState(cookie.cartProducts || 0)
-  
-  function increaseCartProducts() {
-    setProductQuantity(productQuantity + 1)
-    setCookie('cartProducts', productQuantity + 1)
+
+  const [cartProducts, setCartProducts] = useState<number[]>(cookie.cartProducts || [])
+
+  function addCartProducts(id: number) {
+    setCartProducts([...cartProducts, id])
+    setCookie('cartProducts', [...cartProducts, id])
   }
 
   return (
-    <CartContext.Provider value={productQuantity}>
-      <UpdateCartContext.Provider value={increaseCartProducts}>
+    <CartContext.Provider value={cartProducts}>
+      <UpdateCartContext.Provider value={addCartProducts}>
         {children}
       </UpdateCartContext.Provider>
     </CartContext.Provider>

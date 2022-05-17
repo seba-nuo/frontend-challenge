@@ -2,11 +2,16 @@ import { useContext } from "react"
 import { productsProps } from "../../../types"
 import { Stars, valueToPrice } from "../../Services/utils"
 import { UpdateCartContext } from './../../Services/CartContext'
+import { toast } from 'react-hot-toast'
 
 function Card(product: productsProps) {
   const updateCart = useContext(UpdateCartContext)
-  
   const hasInstallments = product.installments.length > 0
+
+  const addToCart = () => {
+    updateCart(product.productId)
+    toast.success(`El producto ${product.productName} ha sido agregado a su carrito`, { position: "bottom-right" })
+  }
 
   return (
     <li className="flex justify-center container mx-6 mt-6">
@@ -31,7 +36,12 @@ function Card(product: productsProps) {
             o por {product.installments[0].quantity} cuotas de {valueToPrice(product.installments[0].value)}
           </p>
         }
-        <button type="button" onClick={updateCart} className="bg-black text-white rounded-md h-10 w-full mt-3">COMPRAR</button>
+        <button
+          type="button"
+          onClick={addToCart}
+          className="bg-black text-white rounded-md h-10 w-full mt-3">
+          COMPRAR
+        </button>
       </div>
     </li>
   )
